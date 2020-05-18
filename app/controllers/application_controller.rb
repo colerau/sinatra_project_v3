@@ -1,7 +1,8 @@
-require "../config/environment"
-require "../app/models/user"
-require "../app/models/book"
-require "../app/models/review"
+# WHY ONLY ONE DOT?!
+require "./config/environment"
+require "./app/models/user"
+require "./app/models/book"
+require "./app/models/review"
 
 class ApplicationController < Sinatra::Base
 
@@ -17,35 +18,18 @@ class ApplicationController < Sinatra::Base
     end
 
     get '/' do
-      erb :"/application/index"
+      erb :"/application/home"
     end
 
     helpers do 
-
-        def logged_in? 
-            if (session[:email] && session[:password])
-                return true 
-            else 
-                return false
-            end
-        end
-
-        def login(email, password)
-            binding.pry
-            if user = User.find_by(email: email)
-                if user.authenticate(password)
-                    session[:user_id] = user.id
-                    session[:email] = user.email
-                    session[:password] = user.password
-                    redirect '/users'
-                end 
-            else 
-                redirect "/login"
-            end
+        def logged_in?
+            #returns boolean value of session[:user_id]
+            !!session[:user_id]
         end
 
         def current_user
-
+            #finds by integer id in session[:user_id]
+            User.find(session[:user_id])
         end
     end
 
