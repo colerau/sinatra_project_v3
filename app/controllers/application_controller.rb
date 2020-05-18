@@ -30,6 +30,7 @@ class ApplicationController < Sinatra::Base
         def current_user
             #finds by integer id in session[:user_id]
             User.find(session[:user_id])
+            #returns user object 
         end
     end
 

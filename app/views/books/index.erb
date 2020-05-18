@@ -1,0 +1,9 @@
+<p style = "font-family: didot">
+
+<% @books.each do |book| %>
+    <i>Title:</i> <%= book.title %> <br> 
+    <i>Author:</i> <%= book.author %> <br> 
+    <i>Popularity Ranking:</i> <%= "##{book.popularity}" %> <br> <br> <br> 
+<% end %> 
+
+</p>
