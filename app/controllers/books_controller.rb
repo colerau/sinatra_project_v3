@@ -1,5 +1,3 @@
-# should be renamed to reviews controller 
-
 class BooksController < ApplicationController
     get '/books' do 
         if !logged_in?
