@@ -1,7 +1,8 @@
 <% @reviews.each do |review| %> 
-     Title: <%= review.book.title %> <br> 
-     Author: <%= review.book.author %> <br> 
-     Review: <%= review.text %> <br> <br> 
+     <i>Book Title:</i> <%= review.book.title %> <br> 
+     <i>Book Author:</i> <%= review.book.author %> <br> 
+     <i>Your Book Review:</i> <%= review.text %> <br>
+     <a class="button" href="/reviews/<%=review.id%>/edit">Edit</a> <br> <br> <br> <br> 
 <% end %> 
 
 <!-- back to user's home page --> 
