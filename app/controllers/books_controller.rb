@@ -22,17 +22,13 @@ class BooksController < ApplicationController
             redirect "/login"
         else 
             @user = current_user
-            binding.pry
             if (params[:user][:book_id] != nil)
                 if !(params[:user][:review].empty?)
-                    binding.pry
                     @book = Book.find_by_id(params[:user][:book_id][0].to_i)
                     @review = Review.create(user_id: @user.id, book_id: @book.id, text: params[:user][:review])
-                    binding.pry
                     redirect "/reviews/#{@review.id}"
                 end 
             end
-            binding.pry
         end 
     end
 
