@@ -2,7 +2,13 @@
      <i>Book Title:</i> <%= review.book.title %> <br> 
      <i>Book Author:</i> <%= review.book.author %> <br> 
      <i>Your Book Review:</i> <%= review.text %> <br>
-     <a class="button" href="/reviews/<%=review.id%>/edit">Edit</a> <br> <br> <br> <br> 
+
+     <a class="button" href="/reviews/<%=review.id%>/edit">Edit</a> <br> 
+
+     <form method="post" action="/reviews/<%= review.id %>">
+     <input type="hidden" name="_method" value="delete">
+     <input type="submit" value="Delete">
+</form> <br> <br> <br> 
 <% end %> 
 
 <!-- back to user's home page --> 
