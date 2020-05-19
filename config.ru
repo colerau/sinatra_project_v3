@@ -10,6 +10,5 @@ end
 use Rack::MethodOverride
 use SessionsController
 use BooksController 
-# use ReviewsController
-# use UsersController
+use ReviewsController
 run ApplicationController
