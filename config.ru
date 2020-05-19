@@ -9,7 +9,7 @@ end
 
 use Rack::MethodOverride
 use SessionsController
-# use BooksController 
+use BooksController 
 # use ReviewsController
 # use UsersController
 run ApplicationController

@@ -22,7 +22,7 @@ class BooksController < ApplicationController
         if !logged_in?
             redirect "/login"
         else 
-            
+            binding.pry
         end 
     end
 
