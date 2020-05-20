@@ -3,6 +3,8 @@
 # Review some books with this web app.
 
 ## [App Demonstration](https://www.youtube.com/watch?v=ePR79GlFnFI)
+
+## [Blog Post](https://dev.to/colerau/cole-rau-s-flatiron-school-sinatra-project-4ggg)
 ### Installation: 
 
 1. Fork and clone this repo. 
