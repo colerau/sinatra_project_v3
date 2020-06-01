@@ -8,6 +8,7 @@ class BooksController < ApplicationController
         end 
     end
 
+    #test
     get '/books/new' do 
         if !logged_in?
             redirect "/login"
