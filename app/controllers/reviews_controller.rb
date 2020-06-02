@@ -72,13 +72,13 @@ class ReviewsController < ApplicationController
     end
 
     delete '/reviews/:id' do 
-        if !logged_in?
-            redirect "/login"
-        else 
-            @user = current_user
-            @review = Review.find_by_id(params[:id])
+        @review = Review.find_by_id(params[:id])
+        @user = current_user
+        if @user.id == @review.user_id
             @review.delete
-            redirect to '/users/user_home'
+            redirect '/users/user_home'
+        else 
+            redirect '/logout'
         end 
     end
 end
