@@ -1,0 +1,16 @@
+<h1> Review a book: </h1>
+
+<p style = "font-family: didot">
+
+<form action="/reviews" method="post">
+Pick a book: <br> <br> <% @books.each do |book| %>
+    <input type="radio" name="user[book_id][]" value="<%= book.id %>" id="<%= book.id %>"> <%= "\"#{book.title}\" by #{book.author}" %> <br> <br> 
+<% end %> 
+
+Write a review: <br> <br> <input type="text" name="user[review]"> 
+
+<br> <br> <br> 
+<input type="submit" name="submit" id="submit" value="Submit"> 
+</form> 
+
+</p>

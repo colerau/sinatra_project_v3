@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
             redirect "/login"
         else 
             @books = Book.all
-            erb :'/books/new'
+            erb :'/reviews/new'
         end
     end
     
@@ -48,10 +48,14 @@ class ReviewsController < ApplicationController
     get '/reviews/:id/edit' do 
         if !logged_in?
             redirect "/login"
-        else 
-            @user = current_user
+        else
             @review = Review.find_by_id(params[:id])
-            erb :'/reviews/edit'
+            @user = current_user
+            if @user.id == @review.user_id
+                erb :'/reviews/edit'
+            else 
+                redirect '/logout'
+            end 
         end 
     end
 
