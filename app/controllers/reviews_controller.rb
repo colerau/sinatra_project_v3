@@ -50,10 +50,9 @@ class ReviewsController < ApplicationController
             redirect "/login"
         else
             @review = Review.find_by_id(params[:id])
-            @user = current_user
             if @review == nil
                 redirect 'users/user_home'
-            elsif @user.id == @review.user_id
+            elsif authorized?(@review)
                 erb :'/reviews/edit'
             else 
                 redirect '/logout'

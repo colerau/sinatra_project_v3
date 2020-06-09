@@ -32,6 +32,10 @@ class ApplicationController < Sinatra::Base
             User.find(session[:user_id])
             #returns user object 
         end
+
+        def authorized?(review)
+            current_user.id == review.user_id
+        end
     end
 
 end

@@ -11,4 +11,5 @@ use Rack::MethodOverride
 use SessionsController
 use ReviewsController
 use UsersController
+use CategoriesController
 run ApplicationController
